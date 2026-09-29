@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>大腦保養迷思大檢驗｜用研究實證看五個常見說法</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#E8552D; --amber:#F4A93C; --teal:#028090; --ink:#12343B;
+  --bg:#EEF7F6; --paper:#FFFFFF; --soft:#FFF4E2; --line:#CFE3E1; --muted:#4B6468;
+  --good:#028090; --good-bg:#DDF1EF;
+  --maybe:#B86A00; --maybe-bg:#FFEACB;
+  --weak:#C23E1C; --weak-bg:#FDE3DA;
+  --none:#5E6E71; --none-bg:#E7ECEC;
+  --round:"Huninn","Noto Sans TC","Microsoft JhengHei",sans-serif;
+  --body:"Noto Sans TC","Microsoft JhengHei","PingFang TC",sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E9F4F2; --bg:#0E2429; --paper:#16353B; --soft:#2A2B22; --line:#2C5057; --muted:#A9C2C0;
+    --teal:#3FC1C0; --good:#5ED3CF; --good-bg:#153F42;
+    --maybe:#FFC266; --maybe-bg:#3A2E16;
+    --weak:#FF8A66; --weak-bg:#3E2219;
+    --none:#B8C6C6; --none-bg:#23393D;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E9F4F2; --bg:#0E2429; --paper:#16353B; --soft:#2A2B22; --line:#2C5057; --muted:#A9C2C0;
+  --teal:#3FC1C0; --good:#5ED3CF; --good-bg:#153F42;
+  --maybe:#FFC266; --maybe-bg:#3A2E16;
+  --weak:#FF8A66; --weak-bg:#3E2219;
+  --none:#B8C6C6; --none-bg:#23393D;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:19px;line-height:1.75;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:var(--teal);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+
+/* hero */
+.hero{padding:48px 0 28px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:24px;align-items:center}
+.hero h1{font-family:var(--round);font-weight:400;font-size:clamp(40px,7vw,68px);line-height:1.15;margin:0 0 14px;letter-spacing:.02em}
+.hero h1 .line2{display:block;color:var(--orange)}
+.hero p.lead{font-size:21px;margin:0 0 18px;color:var(--ink)}
+.hero .meta{font-size:16px;color:var(--muted)}
+.mascot{width:100%;max-width:320px;justify-self:center}
+.mascot .bob{transform-origin:160px 170px;animation:bob 3.2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+
+/* myth index */
+.index{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0;padding:0;list-style:none}
+.index a{display:inline-block;text-decoration:none;color:var(--ink);background:var(--paper);border:2px solid var(--line);border-radius:999px;padding:6px 16px;font-size:17px;font-weight:500}
+.index a:hover{border-color:var(--orange)}
+
+/* legend */
+.legend{background:var(--paper);border-radius:22px;padding:22px 24px;margin:26px 0 8px;border:2px dashed var(--line)}
+.legend h2{font-family:var(--round);font-weight:400;font-size:26px;margin:0 0 6px}
+.legend p{margin:0 0 14px;color:var(--muted);font-size:17px}
+.scale{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.scale div{border-radius:14px;padding:12px 12px 10px;font-size:16px;line-height:1.5}
+.scale b{display:block;font-size:18px;margin-bottom:2px}
+
+/* badges */
+.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 14px 3px 10px;font-weight:700;font-size:17px;white-space:nowrap}
+.badge::before{content:"";width:12px;height:12px;border-radius:50%;background:currentColor}
+.good{color:var(--good);background:var(--good-bg)}
+.maybe{color:var(--maybe);background:var(--maybe-bg)}
+.weak{color:var(--weak);background:var(--weak-bg)}
+.none{color:var(--none);background:var(--none-bg)}
+.scale .good b,.scale .maybe b,.scale .weak b,.scale .none b{color:inherit}
+.scale .good,.scale .maybe,.scale .weak,.scale .none{color:var(--ink)}
+.scale .good b{color:var(--good)} .scale .maybe b{color:var(--maybe)} .scale .weak b{color:var(--weak)} .scale .none b{color:var(--none)}
+
+/* myth sections */
+.myth{background:var(--paper);border-radius:28px;margin:36px 0;padding:30px 30px 26px;position:relative;border:2px solid var(--line)}
+.myth .tag{position:absolute;top:-20px;left:26px;background:var(--orange);color:#fff;font-family:var(--round);font-size:20px;border-radius:14px;padding:4px 16px;transform:rotate(-3deg)}
+.myth h2{font-family:var(--round);font-weight:400;font-size:clamp(27px,4.4vw,36px);line-height:1.35;margin:10px 0 18px}
+.guess{background:var(--soft);border-radius:18px;padding:16px 18px}
+.guess p{margin:0 0 10px;font-weight:700}
+.guess .btns{display:flex;flex-wrap:wrap;gap:10px}
+.guess button{font:inherit;font-size:18px;font-weight:700;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:14px;padding:8px 20px;cursor:pointer;box-shadow:0 4px 0 var(--ink);transition:transform .12s, box-shadow .12s}
+.guess button:hover{transform:translateY(-1px)}
+.guess button:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.guess button[aria-pressed="true"]{background:var(--amber);color:#12343B}
+.guess .skip{background:none;border:none;box-shadow:none;color:var(--teal);text-decoration:underline;font-weight:500;padding:8px 6px}
+.guess .skip:active{transform:none;box-shadow:none}
+.you{margin:12px 0 0;font-size:17px;color:var(--muted);min-height:1em}
+
+.answer{display:none;margin-top:22px}
+.answer.open{display:block;animation:pop .45s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+.verdict{border-left:8px solid var(--teal);padding:4px 0 4px 18px;margin:0 0 22px}
+.verdict .badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.verdict p{font-size:22px;font-weight:700;margin:0;line-height:1.6}
+.answer h3{font-family:var(--round);font-weight:400;font-size:24px;margin:26px 0 10px;color:var(--teal)}
+.answer ul{margin:0;padding-left:1.2em}
+.answer li{margin:0 0 10px}
+.answer li::marker{color:var(--orange)}
+.study{font-size:15px;color:var(--muted)}
+.note{background:var(--weak-bg);border-radius:16px;padding:14px 18px;margin-top:18px}
+.note strong{color:var(--weak)}
+.todo{background:var(--good-bg);border-radius:16px;padding:14px 18px;margin-top:18px}
+.todo strong{color:var(--good)}
+
+/* sub-cards for myth 4 & 5 */
+.subs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sub{border:2px solid var(--line);border-radius:18px;padding:16px 18px}
+.sub h4{font-size:21px;margin:0 0 8px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+.sub p{margin:0 0 8px;font-size:17.5px}
+
+/* big picture */
+.big{background:var(--ink);color:#fff;border-radius:28px;padding:32px 30px;margin:48px 0 30px}
+:root[data-theme="dark"] .big{background:#07181B}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .big{background:#07181B}}
+.big h2{font-family:var(--round);font-weight:400;font-size:clamp(28px,4.6vw,38px);margin:0 0 12px;color:var(--amber)}
+.big p{margin:0 0 16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px;padding:0;list-style:none}
+.chips li{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:4px 14px;font-size:17px}
+.big a{color:#9FE3E0}
+
+/* refs */
+.refs{font-size:15.5px;line-height:1.65;color:var(--muted)}
+.refs h2{font-family:var(--round);font-weight:400;font-size:24px;color:var(--ink);margin:0 0 10px}
+.refs ol{padding-left:1.4em}
+.refs li{margin-bottom:6px;overflow-wrap:anywhere}
+footer{padding:24px 0 48px;font-size:15.5px;color:var(--muted)}
+.toolbar{display:flex;justify-content:flex-end;margin-top:6px}
+.toolbar button{font:inherit;font-size:16px;background:none;border:2px solid var(--line);color:var(--ink);border-radius:999px;padding:4px 16px;cursor:pointer}
+
+@media (max-width:720px){
+  body{font-size:18px}
+  .hero-grid{grid-template-columns:1fr}
+  .mascot{max-width:220px;order:-1}
+  .scale{grid-template-columns:1fr 1fr}
+  .subs{grid-template-columns:1fr}
+  .myth{padding:28px 20px 22px}
+  .big{padding:26px 20px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+@media print{
+  .answer{display:block!important}
+  .guess,.toolbar,.mascot{display:none}
+  .myth{break-inside:avoid-page}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>大腦保養<span class="line2">迷思大檢驗</span></h1>
+        <p class="lead">益生菌、照紅外線、吃肌酸、保健食品、換手練習……這些說法到底有沒有研究撐腰？我們把高品質研究找出來，一題一題看。</p>
+        <p class="meta">每一題先猜猜看，再看研究怎麼說。資料整理至 2026 年 9 月。</p>
+      </div>
+      <svg class="mascot" viewBox="0 0 320 300" role="img" aria-label="拿著放大鏡的大腦小幫手">
+        <g class="bob">
+          <g fill="#FFD9A0" stroke="#E8552D" stroke-width="6" stroke-linejoin="round">
+            <circle cx="112" cy="128" r="58"/>
+            <circle cx="170" cy="100" r="62"/>
+            <circle cx="222" cy="136" r="56"/>
+            <circle cx="150" cy="178" r="60"/>
+            <circle cx="206" cy="190" r="48"/>
+          </g>
+          <path d="M92 150c30 22 90 34 150 4" fill="none" stroke="#FFD9A0" stroke-width="30" stroke-linecap="round"/>
+          <path d="M100 118c14-10 26-2 34-12M168 66c-6 18 10 26 2 42M214 118c14 4 18 18 30 16" fill="none" stroke="#E8552D" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="150" cy="150" r="8" fill="#12343B"/>
+          <circle cx="196" cy="150" r="8" fill="#12343B"/>
+          <circle cx="153" cy="147" r="2.5" fill="#fff"/>
+          <circle cx="199" cy="147" r="2.5" fill="#fff"/>
+          <ellipse cx="134" cy="170" rx="11" ry="7" fill="#F4A93C" opacity=".7"/>
+          <ellipse cx="214" cy="170" rx="11" ry="7" fill="#F4A93C" opacity=".7"/>
+          <path d="M162 172q12 12 24 0" fill="none" stroke="#12343B" stroke-width="5" stroke-linecap="round"/>
+          <path d="M92 210 70 236" stroke="#12343B" stroke-width="6" stroke-linecap="round"/>
+          <g transform="translate(40 232)">
+            <line x1="22" y1="4" x2="0" y2="40" stroke="#028090" stroke-width="12" stroke-linecap="round"/>
+            <circle cx="36" cy="-18" r="30" fill="#DDF1EF" stroke="#028090" stroke-width="8"/>
+            <path d="M22 -28q8-8 18-6" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>
+          </g>
+          <path d="M250 214l22 18" stroke="#12343B" stroke-width="6" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+
+    <ul class="index" aria-label="五個問題">
+      <li><a href="#q1">益生菌</a></li>
+      <li><a href="#q2">近紅外線／遠紅外線</a></li>
+      <li><a href="#q3">肌酸</a></li>
+      <li><a href="#q4">卵磷脂、Omega-3、Omega-9</a></li>
+      <li><a href="#q5">換手、學新事物</a></li>
+    </ul>
+
+    <section class="legend" aria-labelledby="legend-title">
+      <h2 id="legend-title">怎麼看「證據燈號」</h2>
+      <p>研究有強有弱。大型隨機對照試驗和統合分析最可靠；觀察研究只能看出「有關聯」，不一定是因果；小型或沒有對照組的試驗，只能當作初步線索。</p>
+      <div class="scale">
+        <div class="good"><b>有證據支持</b>多個設計良好的隨機試驗結果一致</div>
+        <div class="maybe"><b>初步訊號</b>有正面結果，但研究少、小或不一致</div>
+        <div class="weak"><b>證據不足</b>高品質試驗沒看到效果，或幾乎沒有人體研究</div>
+        <div class="none"><b>尚無研究</b>這個說法還沒被直接研究過</div>
+      </div>
+    </section>
+    <div class="toolbar"><button type="button" id="openAll">全部展開</button></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- 1 -->
+<section class="myth" id="q1" aria-labelledby="q1t">
+  <span class="tag">第 1 題</span>
+  <h2 id="q1t">益生菌真的對大腦有幫助嗎？該怎麼吃？</h2>
+  <div class="guess">
+    <p>你覺得呢？</p>
+    <div class="btns">
+      <button type="button" data-g="有幫助">有幫助</button>
+      <button type="button" data-g="沒幫助">沒幫助</button>
+      <button type="button" data-g="還不確定">還不確定</button>
+      <button type="button" class="skip" data-g="">直接看答案</button>
+    </div>
+    <p class="you" aria-live="polite"></p>
+  </div>
+  <div class="answer">
+    <div class="verdict">
+      <div class="badges"><span class="badge maybe">已有輕度認知障礙：初步訊號</span><span class="badge weak">健康人預防失智：證據不足</span></div>
+      <p>對已經有輕度認知障礙的人，有小幅改善的初步訊號；但「健康的人吃益生菌可以預防失智」，目前沒有研究證實。</p>
+    </div>
+    <h3>研究怎麼說</h3>
+    <ul>
+      <li>2024 至 2025 年有多篇統合分析整合隨機對照試驗，發現輕度認知障礙或阿茲海默症患者補充益生菌後，MMSE、MoCA 等認知分數平均有小到中度的進步。</li>
+      <li>但結果不一致：也有 2024 年的統合分析發現，改善幅度沒有達到統計上的差異。一篇 2025 年的傘狀回顧也指出，目前臨床照護仍未把益生菌列為認知障礙的建議處置。</li>
+      <li>多數試驗人數在數十到一百多人、時間約 12 週，而且每個研究用的菌種都不同，所以還說不出「哪一種菌、吃多久」有用。</li>
+    </ul>
+    <h3>那該怎麼吃？</h3>
+    <ul>
+      <li><strong>先從食物開始。</strong>史丹佛大學 2021 年發表在《Cell》的隨機試驗，讓健康成人連續多週增加發酵食物（優格、克菲爾、泡菜、發酵蔬菜等），結果腸道菌多樣性上升，多項發炎指標下降。<span class="study">（這個研究看的是腸道菌與發炎，不是認知；每組約 18 人。）</span></li>
+      <li><strong>搭配膳食纖維。</strong>蔬菜、豆類、全穀是腸道好菌的「食物」，和發酵食物一起吃。</li>
+      <li><strong>選無糖或低糖。</strong>市售優酪乳常加很多糖；醃漬發酵物鈉含量高，適量就好。</li>
+      <li><strong>如果要吃補充品：</strong>選菌株標示清楚（屬、種、株編號）與菌數的產品，把它當成飲食的輔助，而不是護腦的主角。</li>
+    </ul>
+    <div class="note"><strong>要注意：</strong>免疫力低下、重症、剛動完大手術或裝有中心靜脈導管的人，使用益生菌補充品前先和醫師討論。</div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="myth" id="q2" aria-labelledby="q2t">
+  <span class="tag">第 2 題</span>
+  <h2 id="q2t">照近紅外線、遠紅外線，能預防失智嗎？</h2>
+  <div class="guess">
+    <p>你覺得呢？</p>
+    <div class="btns">
+      <button type="button" data-g="有幫助">有幫助</button>
+      <button type="button" data-g="沒幫助">沒幫助</button>
+      <button type="button" data-g="還不確定">還不確定</button>
+      <button type="button" class="skip" data-g="">直接看答案</button>
+    </div>
+    <p class="you" aria-live="polite"></p>
+  </div>
+  <div class="answer">
+    <div class="verdict">
+      <div class="badges"><span class="badge maybe">近紅外線頭部照光：初步訊號</span><span class="badge none">遠紅外線產品預防失智：尚無研究</span></div>
+      <p>近紅外線照頭（光生物調節）還在研究階段，只有小型試驗的正面線索；遠紅外線產品則沒有預防失智的直接研究。兩者目前都不能說「可以預防失智」。</p>
+    </div>
+    <h3>近紅外線：研究怎麼說</h3>
+    <ul>
+      <li>2025 年一篇統合分析整合隨機對照試驗，照光組的整體認知分數比對照組好；但納入的研究規模小，照射方式也各不相同。</li>
+      <li>美國阿茲海默症藥物研發基金會（ADDF）2025 年的評估認為：安全性良好，療效則屬「有限」，最適合的波長、功率、時間都還沒確立。</li>
+      <li>關鍵問題是光能不能真的照進大腦。評估指出，許多居家 LED 產品功率可能太低，光很難穿過頭皮和頭骨；有頭髮的部位更難穿透。</li>
+      <li>針對輕度認知障礙與早期阿茲海默症、有更完整腦部檢查的試驗仍在進行中，預計 2026 年前後才有結果。</li>
+    </ul>
+    <h3>遠紅外線：研究怎麼說</h3>
+    <ul>
+      <li>常被提到的是芬蘭研究：2,315 位 42 到 60 歲的男性追蹤約 20 年，每週洗桑拿 4 到 7 次的人，失智風險比每週 1 次的人低約 66%。</li>
+      <li>但這是觀察研究，只能看出「有關聯」，不代表桑拿本身造成保護；研究對象是芬蘭傳統桑拿、只有中年男性，也不能直接套用到遠紅外線燈、遠紅外線衣物或床墊。</li>
+    </ul>
+    <div class="todo"><strong>比較實際的做法：</strong>把時間和預算優先放在證據較強的事情上，例如規律運動、控制血壓血糖、矯正聽力視力（見文末）。</div>
+    <div class="note"><strong>要注意：</strong>長者泡熱、烤熱容易脫水、頭暈、姿勢性低血壓而跌倒；有心血管疾病，或糖尿病造成感覺較遲鈍的人，要小心低溫燙傷。任何照光產品都不要直視光源。</div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="myth" id="q3" aria-labelledby="q3t">
+  <span class="tag">第 3 題</span>
+  <h2 id="q3t">運動在吃的肌酸，可以預防失智嗎？</h2>
+  <div class="guess">
+    <p>你覺得呢？</p>
+    <div class="btns">
+      <button type="button" data-g="有幫助">有幫助</button>
+      <button type="button" data-g="沒幫助">沒幫助</button>
+      <button type="button" data-g="還不確定">還不確定</button>
+      <button type="button" class="skip" data-g="">直接看答案</button>
+    </div>
+    <p class="you" aria-live="polite"></p>
+  </div>
+  <div class="answer">
+    <div class="verdict">
+      <div class="badges"><span class="badge maybe">長者記憶：初步訊號</span><span class="badge weak">預防失智：證據不足</span></div>
+      <p>肌酸對長者記憶有初步的正面訊號，但還沒有任何研究證實它能預防失智。</p>
+    </div>
+    <h3>研究怎麼說</h3>
+    <ul>
+      <li>2023 年《Nutrition Reviews》的統合分析：健康的人補充肌酸後，記憶表現比吃安慰劑好，66 到 76 歲長者的效果較明顯。作者也提醒研究有中度偏誤風險、結果差異大。後續用更嚴謹的方法重新分析，整體效果只在長者組仍然顯著。</li>
+      <li>2025 年第一個在阿茲海默症患者身上做的肌酸試驗（CABA）：20 位患者每天吃 20 公克、連續 8 週，腦內肌酸增加，部分認知測驗進步。但所有人都吃肌酸、沒有對照組，主要目的是測試可不可行，研究團隊也表示需要更大規模的試驗。</li>
+    </ul>
+    <h3>該怎麼看</h3>
+    <ul>
+      <li>目前可以當成「值得追蹤的研究方向」，還不是預防失智的方法。</li>
+      <li>肌酸比較確定的用途，是搭配阻力訓練增加肌力與肌肉量；對長者來說，維持肌力本身就很重要。</li>
+      <li>研究用的每天 20 公克是實驗劑量，不等於日常建議量。</li>
+    </ul>
+    <div class="note"><strong>要注意：</strong>有腎臟疾病的人使用前先和醫師討論；剛開始吃可能因為水分滯留而體重增加；選成分單純的一水肌酸（creatine monohydrate）產品。</div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="myth" id="q4" aria-labelledby="q4t">
+  <span class="tag">第 4 題</span>
+  <h2 id="q4t">卵磷脂、Omega-3、Omega-9……吃保健食品能護腦嗎？</h2>
+  <div class="guess">
+    <p>你覺得呢？</p>
+    <div class="btns">
+      <button type="button" data-g="有幫助">有幫助</button>
+      <button type="button" data-g="沒幫助">沒幫助</button>
+      <button type="button" data-g="還不確定">還不確定</button>
+      <button type="button" class="skip" data-g="">直接看答案</button>
+    </div>
+    <p class="you" aria-live="polite"></p>
+  </div>
+  <div class="answer">
+    <div class="verdict">
+      <p>對認知正常的人，大多數單一營養素補充劑都沒有被證實能預防認知退化；目前訊號比較明確的是「綜合維他命」，但效果不大。</p>
+    </div>
+    <div class="subs">
+      <div class="sub">
+        <h4>Omega-3 魚油 <span class="badge weak">證據不足</span></h4>
+        <p>Cochrane 系統性回顧整合 3 個高品質隨機試驗、3,536 位 60 歲以上認知正常的長者，吃魚油和安慰劑相比，認知功能沒有差別。</p>
+        <p>另外，心血管大型試驗的統合分析發現，魚油補充劑與心房顫動風險上升有關，每天超過 1 公克時風險較明顯。</p>
+        <p><strong>建議：</strong>從吃魚攝取，而不是靠膠囊。</p>
+      </div>
+      <div class="sub">
+        <h4>卵磷脂 <span class="badge weak">證據不足</span></h4>
+        <p>Cochrane 系統性回顧整理 12 個隨機試驗，卵磷脂對阿茲海默症和巴金森氏症失智都沒有明確的好處。</p>
+        <p>卵磷脂在蛋、黃豆等食物中本來就有，從正常飲食攝取即可。</p>
+      </div>
+      <div class="sub">
+        <h4>Omega-9 <span class="badge none">尚無補充劑研究</span></h4>
+        <p>Omega-9（主要是油酸）人體可以自己製造，目前沒有 Omega-9 膠囊預防失智的試驗。</p>
+        <p>相關證據來自橄欖油：哈佛約 9 萬 2 千人追蹤 28 年，每天吃超過 7 公克（約半湯匙）橄欖油的人，死於失智相關原因的風險低 28%。這是觀察研究。</p>
+        <p><strong>建議：</strong>用橄欖油取代人造奶油、美乃滋，而不是另外吃膠囊。</p>
+      </div>
+      <div class="sub">
+        <h4>綜合維他命 <span class="badge maybe">小幅有效</span></h4>
+        <p>美國 COSMOS 大型試驗的 3 項認知子研究合併分析（5 千多位 60 歲以上長者），每天吃綜合維他命 2 到 3 年，整體認知的退化，相當於少老了約 2 年。</p>
+        <p>效果不大，研究對象是一般營養狀態的美國長者；對飲食攝取不足的長者可能更有意義。</p>
+      </div>
+    </div>
+    <div class="note"><strong>要注意：</strong>保健食品不是藥，原則是「缺才補」。長者常見維生素 B12、維生素 D 不足，可以抽血確認後再補。有在使用抗凝血藥物的人，吃魚油前先和醫師或藥師討論。避免同時吃好幾種成分重疊的產品。</div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="myth" id="q5" aria-labelledby="q5t">
+  <span class="tag">第 5 題</span>
+  <h2 id="q5t">用非慣用手、學新東西、挑戰困難的事，對大腦有用嗎？</h2>
+  <div class="guess">
+    <p>你覺得呢？</p>
+    <div class="btns">
+      <button type="button" data-g="有幫助">有幫助</button>
+      <button type="button" data-g="沒幫助">沒幫助</button>
+      <button type="button" data-g="還不確定">還不確定</button>
+      <button type="button" class="skip" data-g="">直接看答案</button>
+    </div>
+    <p class="you" aria-live="polite"></p>
+  </div>
+  <div class="answer">
+    <div class="verdict">
+      <div class="badges"><span class="badge good">持續學新技能、有挑戰的訓練：有證據支持</span><span class="badge weak">換手本身：證據不足</span></div>
+      <p>「學新技能、持續有挑戰」有隨機試驗支持；「用非慣用手」本身，則沒有研究證實能預防失智。重點在學習與挑戰，不在換手。</p>
+    </div>
+    <div class="subs">
+      <div class="sub">
+        <h4>用非慣用手 <span class="badge weak">證據不足</span></h4>
+        <p>練習非慣用手會讓那隻手更靈巧，大腦的動作相關區域也會跟著調整。但研究者認為效益主要留在練習的那項技能上，不會讓人整體變聰明，也沒有研究顯示能預防失智。</p>
+      </div>
+      <div class="sub">
+        <h4>學一項新技能 <span class="badge good">有證據支持</span></h4>
+        <p>美國 Synapse 研究讓 221 位 60 到 90 歲長者隨機學數位攝影或拼布，或只參加社交、低難度活動，每週約 15 小時、持續 3 個月。只有「高挑戰」組的記憶進步，部分效果維持到一年後。</p>
+      </div>
+      <div class="sub">
+        <h4>處理速度訓練 <span class="badge good">有證據支持</span></h4>
+        <p>美國 ACTIVE 試驗 20 年追蹤（2,021 位 65 歲以上長者）：接受處理速度訓練、而且有參加追加課程的人，20 年內被診斷失智的風險低 25%。記憶和推理訓練組則沒有這個效果；沒有追加課程的速度訓練組也沒有。</p>
+      </div>
+      <div class="sub">
+        <h4>多面向一起來 <span class="badge good">有證據支持</span></h4>
+        <p>2025 年美國 POINTER 試驗（2,111 位高風險長者）：運動、MIND 飲食、認知與社交挑戰、健康監測一起做 2 年，兩組認知都進步，其中有結構、有人陪伴督促的那一組進步更多。</p>
+      </div>
+    </div>
+    <div class="todo"><strong>怎麼做比較有效：</strong>挑一件「有點難、需要持續學」的新事物，難度要剛好，太難會有壓力、太簡單則沒效果；最好跟別人一起學，並且規律持續、定期複習。換手寫字、換手用筷子可以當成活動裡的小變化，但真正發揮作用的是「學習」本身。</div>
+  </div>
+</section>
+
+<section class="big" aria-labelledby="bigt">
+  <h2 id="bigt">比起找單一妙方，更有證據的是這些</h2>
+  <p>2024 年《刺胳針》（The Lancet）失智症委員會報告指出，全球約 45% 的失智症，理論上可以透過處理 14 個可改變的風險因子來預防或延緩：</p>
+  <ul class="chips">
+    <li>教育與持續學習</li><li>聽力損失</li><li>視力損失</li><li>高血壓</li><li>糖尿病</li><li>壞膽固醇過高</li><li>肥胖</li><li>吸菸</li><li>過量飲酒</li><li>缺乏運動</li><li>憂鬱</li><li>社交孤立</li><li>頭部外傷</li><li>空氣汙染</li>
+  </ul>
+  <p>這五個迷思裡，證據最扎實的「學新事物、有挑戰的訓練」，正好也在這張清單上。把保健食品和儀器當配角，把運動、飲食、社交、學習和慢性病控制當主角，才是目前研究支持的方向。</p>
+</section>
+
+<section class="refs" aria-labelledby="refst">
+  <h2 id="refst">參考研究</h2>
+  <ol>
+    <li>Xiao B, et al. 益生菌對輕度認知障礙與阿茲海默症認知功能之傘狀統合分析. J Health Popul Nutr. 2025. <a href="https://link.springer.com/article/10.1186/s41043-025-00816-3">連結</a></li>
+    <li>Tripathi S, et al. The effect of probiotics on select cognitive domains in MCI and AD: meta-analysis. J Alzheimers Dis Rep. 2024. <a href="https://journals.sagepub.com/doi/10.1177/25424823241289039">連結</a></li>
+    <li>The impact of probiotics therapy on cognitive and metabolic characteristics in patients with cognitive impairment: umbrella review. Eur J Pharmacol. 2025. <a href="https://www.sciencedirect.com/science/article/pii/S0014299925000792">連結</a></li>
+    <li>Wastyk HC, et al. Gut-microbiota-targeted diets modulate human immune status. Cell. 2021. <a href="https://www.cell.com/cell/fulltext/S0092-8674(21)00754-6">連結</a></li>
+    <li>Zhu Z, et al. Photobiomodulation effects on cognitive function: meta-analysis of RCTs. Lasers Med Sci. 2025. <a href="https://link.springer.com/article/10.1007/s10103-025-04484-x">連結</a></li>
+    <li>Alzheimer's Drug Discovery Foundation. Cognitive Vitality Report: Photobiomodulation. 2025. <a href="https://www.alzdiscovery.org/uploads/cognitive_vitality_media/Photobiomodulation_(non-pharmacologic).pdf">連結</a></li>
+    <li>Laukkanen T, et al. Sauna bathing is inversely associated with dementia and Alzheimer's disease in middle-aged Finnish men. Age Ageing. 2017. <a href="https://research-information.bris.ac.uk/en/publications/sauna-bathing-is-inversely-associated-with-dementia-and-alzheimer/">連結</a></li>
+    <li>Prokopidis K, et al. Effects of creatine supplementation on memory in healthy individuals: meta-analysis. Nutr Rev. 2023. <a href="https://academic.oup.com/nutritionreviews/article/81/4/416/6671817">連結</a></li>
+    <li>Smith AN, et al. Creatine monohydrate pilot in Alzheimer's: feasibility, brain creatine, and cognition. Alzheimers Dement (N Y). 2025. <a href="https://alz-journals.onlinelibrary.wiley.com/doi/10.1002/trc2.70101">連結</a></li>
+    <li>Sydenham E, Dangour AD, Lim WS. Omega 3 fatty acid for the prevention of cognitive decline and dementia. Cochrane Database Syst Rev. 2012. <a href="https://pubmed.ncbi.nlm.nih.gov/22696350/">連結</a></li>
+    <li>Gencer B, et al. Effect of long-term marine omega-3 fatty acids supplementation on the risk of atrial fibrillation. Circulation. 2021. <a href="https://pubmed.ncbi.nlm.nih.gov/34612056/">連結</a></li>
+    <li>Higgins JP, Flicker L. Lecithin for dementia and cognitive impairment. Cochrane Database Syst Rev. 2003. <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD001015/full">連結</a></li>
+    <li>Tessier AJ, et al. Consumption of olive oil and diet quality and risk of dementia-related death. JAMA Netw Open. 2024. <a href="https://pubmed.ncbi.nlm.nih.gov/38709531/">連結</a></li>
+    <li>Vyas CM, et al. Effect of multivitamin-mineral supplementation versus placebo on cognitive function (COSMOS). Am J Clin Nutr. 2024. <a href="https://ajcn.nutrition.org/article/S0002-9165(23)66342-7/fulltext">連結</a></li>
+    <li>Park DC, et al. The impact of sustained engagement on cognitive function in older adults: The Synapse Project. Psychol Sci. 2014. <a href="https://agingmind.utdallas.edu/the-synapse-project/">連結</a></li>
+    <li>Coe NB, et al. Impact of cognitive training on claims-based diagnosed dementia over 20 years: evidence from the ACTIVE study. Alzheimers Dement (N Y). 2026. <a href="https://alz-journals.onlinelibrary.wiley.com/doi/10.1002/trc2.70197">連結</a></li>
+    <li>Baker LD, et al. Structured vs self-guided multidomain lifestyle interventions for global cognitive function: US POINTER. JAMA. 2025. <a href="https://jamanetwork.com/journals/jama/fullarticle/2837046">連結</a></li>
+    <li>Livingston G, et al. Dementia prevention, intervention, and care: 2024 report of the Lancet standing Commission. Lancet. 2024. <a href="https://www.thelancet.com/commissions-do/dementia-prevention-intervention-and-care">連結</a></li>
+    <li>BrainFacts.org. Does using your non-dominant hand make you smarter? 2019. <a href="https://www.brainfacts.org/thinking-sensing-and-behaving/thinking-and-awareness/2019/does-using-your-non-dominant-hand-make-you-smarter-080919">連結</a></li>
+  </ol>
+</section>
+
+<footer>
+  本頁整理公開發表的研究，提供一般衛教參考，不能取代醫師、藥師或營養師的個別評估。若已有記憶力變差、容易迷路等情形，請盡早就醫評估。<br>
+  愛迪樂健康促進團隊 整理
+</footer>
+</main>
+
+<script>
+(function(){
+  var lines={
+    "有幫助":"你選了「有幫助」。來看看研究的答案：",
+    "沒幫助":"你選了「沒幫助」。來看看研究的答案：",
+    "還不確定":"你選了「還不確定」。來看看研究的答案："
+  };
+  document.querySelectorAll('.myth').forEach(function(sec){
+    var btns=sec.querySelectorAll('.guess button');
+    var you=sec.querySelector('.you');
+    var ans=sec.querySelector('.answer');
+    btns.forEach(function(b){
+      if(!b.classList.contains('skip')) b.setAttribute('aria-pressed','false');
+      b.addEventListener('click',function(){
+        btns.forEach(function(x){ if(x.hasAttribute('aria-pressed')) x.setAttribute('aria-pressed','false'); });
+        var g=b.getAttribute('data-g');
+        if(g){ b.setAttribute('aria-pressed','true'); you.textContent=lines[g]; }
+        else { you.textContent=''; }
+        ans.classList.remove('open'); void ans.offsetWidth; ans.classList.add('open');
+      });
+    });
+  });
+  var all=document.getElementById('openAll');
+  all.addEventListener('click',function(){
+    document.querySelectorAll('.answer').forEach(function(a){a.classList.add('open');});
+    all.textContent='已全部展開';
+  });
+})();
+</script>
+</body>
+</html>
